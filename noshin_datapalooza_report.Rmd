@@ -1,0 +1,74 @@
+---
+title: "Datapalooza Report"
+author: "Raisa Noshin"
+output: html_notebook
+---
+
+##Fireside Chat/Introduction
+
+During this part of Datapalooza, Philip Bourne, Director of the Data Science Institute spoke with UVA President Jim Ryan about data analysis and the future of the University. Bourne opened his introduction talking about 4 paradigms: Making observations, how the math modeling process began, the rise of computation and its impact on society, and a new societal paradigm that is data-driven. He elaborates and talks about the Jeffersonian prinicple of an open environment, where data and information are openly shared, and everyone is working towards the same goal of humanity, which may be clouded by personal goals. The biggest obstacle he shared with us the current culture, and how the fear that many people feel towards this most recent paradigm is what hinders it. One thing he discussed as a positive change was public and private partnership as a way to maximize progress. Finally, he emphasizes that the way forward relies on asking the right questions, and acknowledging the necessity of data science in all fields. 
+
+When President Ryan spoke, he talked about advancing the University to make it the nation's flagship university, not just Virginia's flagship university. He described his vision of a world-class institute with a purpose to serve others. He wants to focus on building the best educational experience for students, best fostering the discovery of new knowledge across disciplines, andestablishingservice of the commonwealth and beyond. Amongst all these goals, Ryan speaks about data science as the centerpoint of furthering all of these goals, talking about the need to use data to improve people's experiences at our institution. He further talked about the need to not only subscribe to peer-reviewed journals, but to also properly disseminate the data from them to keep progress fully innovative. President Ryan also talked about challenges in higher education involving enhancing cross-disciplinary work, but also maintaining strong individual departments as well. The way that education works, universities and K-12 institutions are awash in data, which, if analyzed, has the potential to unlock numerous insights. 
+
+
+##Research Highlights: Machine Learning
+
+
+####OpenEnsembles: A Python Toolkit for Ensemble Clustering
+
+#####Kristen Naegle
+
+Dr. Naegle is a UVA professor of Biomedical Engineering whose research centers on data analytics and machine learning. Naegle first defined cultering as an unsupervised learning technique to identify patterns in the data, data being points in N-dimensional space. The terms pertaining to clustering involve distance metrics, which are the methods of gauging similarity/dissimilarity, the clustering algorithm, which is the objective function and method for maximizing intra-cluster similarity and minimizing inter-cluster similarity, and K, which is the number of clusters. This research focuses on the develop of a new clustering feature, taking previous methods and creating a new one based on it. The specific type of cultering that Dr. Naegle chose was ensemble clustering, which involves clustering more than 1 way, making new perturbations each time. Perturbations were defined as transforming the data to get new/more robust outputs, such as noise, projections into lower dimensions, the optimum number of clusters, the starting point, and the clustering parameters. The finishing algorithm was defined as alogrithms for assembling results across the ensemble and producing one clustering result, which is just as important as the clustering itself. Professor Naegle then moved on to talking about reproducing Ana Fred's 2001 first ensemble method that was published. The features of OpenEnsemble involve providing a platform for choosing methods to (1) transform data (2) resample data and (3) subsample data. 
+
+####Automatic Quantification in hypertrophic Cardiomyopathy (HCM)
+
+#####Katya Gilbo
+
+Gilbo is a 2nd year grad-student who is working on machine learning image analysis focusing on Cardiomyopathy. HCM is the most common monogenic heart disease, with a prevalence of 1 in 500, and it's the most frequent cause of sudden cardiac death in young adults and athletes in the US. Prognosis of someone's risk of developing HCM is difficult, and current treatment methods don't progress well long-term. However, in the past, there has been increasing efforts in big data analysis from the HCM registry. The drawback of these efforts is that between MRI, genetic test, and blood sample data, there is an abundance of complicated data, with minimal understanding of it. Gilbo's research involves looking through CMR images towards the goal of developing an autonomous cardiac MRI toolbox for HCM. The methods through which Gilbo proposed going about this problem involved conducting an ML analysis of biomarkers for risk strification and therapeutic guidance, employing automatic desegmentation (DNN), and finally CNN image classification. The measures that go into these methods involve LV and RV mass, CV, wall thickness, meanmyocardium T1 values, and scar percentage. The focus for this project centered on identifying Class 1 and Class 2 HCM, which is important because there are few differences between the two conditions, allowing development to center on accuracy and precision on a high level. 
+
+The initial steps that Gilbo took on data preprocessing involved extracting 4 chamber-long axis-end diastole images for each patient, followed by manually checking the image quality and correcting errorsin sequence extraction. Following data preprocessing, Gilbo tried multiple different CNN classification methods. The first of these methods was transfer learning with VGG16, which was shown to be very good at extracting features of interest, had a pre-trained network, and could modify the last couple layers for their purpose. The last of these features, however, proved to be less accurate than other methods. The second mechanism that was tried involved feature extraction with VGG16, followed by SVM classification with AlexNet. The result of this process led to a clean dataset, but with results at 68% that didn't learn class 1 effectively. Upon adding more data, it was found that the process worked even less. The last technique she tried involved training a 3-layer CNN from scratch on cropped septal data, using the keras library in Tensorflow. For this technique, preliminary results yielded 78% accuracy, which was much better than the other techniques. For Gilbo, this is an ongoing project, and therefore conclusions are geared towards future work, and possibly enhancing this accuracy in the future. 
+
+
+####Plagiarism Detection Using Semantic Analysis
+
+#####Samarth Singh
+
+This project was more geared towards other fields involving machine learning than bioinformatics. For this project, Singh used data analytics to detect plagiarism using methods such as basic string, substring, and subsequence matching, the bag of words model, context-based grammar, backendclustering for faster retrieval, and semantic methods applied on keywords. These methods, with particular focus on semantic similarity by looking at Article 1 and 2 and noting tokenizing, conducting action mapping, and calculating the percentage of Synonym Matching, The results of this study were evaluated after the analytical process was tested for efficiency on a corpus of plagiarized short answers. The program gives great results in recognizing heavy plagiarism, but gives better results in the case that the input documents were not plagiarized based on one another. In terms of issues and future work, Singh noted that the undesired results occurred when the input dataset was small in size, and when languages in the documents were mixed, and so these issues will be the priority to work on in the future. 
+
+
+####DeepRacing AI: Teaching autonomous vehicles to handle edge cases in traffic
+
+#####Madhur Behl
+
+Behl opened his talk examining the central issue in creating autotnomous driving vehicles, which is that of localization and mapping. Identifying the question, "where am I?" at all times. Further from that, he talks about scene understanding, looking at where/who/what everything else is. From this questions move to trajectory planning and control: where should I go next? How do I steer and accelerate? All of these were identified by Dr. Behl as end-to-end learnable. His central question in this research was: How can we ensure that an autonomous vehicle drives safely, and what mechanisms does it take to acheive that? Human interactions already have a way to dictate conveying intents to the passenger and everyone else. The contention for Dr. Behl's lab is that machine intelligence is largely about its training data, and therefore there is a necessity for edge cases in the training algorithms. The method through which Behl conducted his research models autonomous vehicle learning algorithsms after race cars, through the "safety through agility" concept. Applying racecar data is the precise edgecase that Behl had iniitially proposed. The way in which the lab employed this concept is by teaching autonomous cars to be agile and operate at the limits of their agility and control, fitting the following quote very well: "If everything seems under control, then you are not going fast enough." After exposing autonomous cars to race cars in real-time it was found that the cars were able to adapt to their situations better, considering that normal driving situations are much less hectic. But the knowledge about racecars allows for autonomous cars to also act well under suddenly bad situations. 
+
+
+##Skills Session: Machine Learning With Python
+
+
+#####Frank La Vigne
+
+Mr. La Vigne began his session talking about himself. As a Microsoft employee La Vigne uses machine learning regularly, and also maintains his own column in MSDN magazine and his Data Driven Podcast. He talked about the 4 basic steps that go into data science, and related that process to the session goals. The first step, Ingest, involved creating a data science VM. The second, Process, uses pandas to clean and prepare the data. The third, Predict, uses Scikit-learn to build a machine learning model. The final step, Visualize, uses matplotlib to visualize the output of the process. La Vigne described data engineering as beginning with the first two steps, but metnions how the last two steps are the only components that give interesting insights. He then goes on to describe how the system in companies work, talking about how in the past, the types of employees people would look for would be "unicorns" who somehow had all the computer science experience, as well as the subject matter experience to conduct a project themselves. From there, it helped to divide and conquer the project and separate the computer scientists from the subject-matter experts. The session focused on going through this process on flight data using Jupityr. 
+
+
+
+##Keynote Presentation: Why US Government Needs You
+
+#####Robin Thottungal
+
+Robin Thottungal is the Chief Technology Officer and Chief Data Scientist at the National Gallery of Arts. His talk centered on climate change and how data scientists can make an impact to help policy makers understand the complex interplay. He began by talking about how the mass production of coffee has impacted the global economy and influenced economic asylum seekers (when farmers can no longer sustain their crops). The Docuamerica movement began with a citizen science data collection initiative by the EPA, who asked people around the world to take pictures of the state of the environment and send it in to monitor improvement. From this, with pictures taken before and after, clear improvements can be seen. However, people are still under the impression that the EPA is useless and should be dissolved. With the current trajectory of the food business, the US is facing more and more problems as a result of climate change, causing Russia to be an emerging superpower in global food supply. In the past, the Docuamerica initiative was a very quick-and-easy simple way to handle issues. Now, issues have become much more multifaceted, and it is necessary to look at things holistically to help us see the true cause, connection, and effect of different events. Thottungal talks about how due to the complexity of the problem of climate change, data science is now going to play a major role in bringing all these disjoining news and events. 
+
+Thottungal then broke down different case studies to elaborate on his point. He talked about Hurricanes and their increased numbers that have been affecting people's lives economically, and talking about how data analytics can help if an impact analysis is done for first responders to maximize the efficiency of this system. Currently, many agencies contribute to this, but they don't work together,and that creates a lot of inefficiency. He then goes on to talk about wildfires, and how simple visualizations are very helpful for first responders. He also talks about the merits and dangers of AI in terms of ethics and for society as a whole, from false positives between husky's and snow, as well as the dangers of "predictive policing", which has extremely racist foundations. He then supports that the main thing that data science should have in its execution is empathy and be extremely conscious of inherent biases when collecting and using data for training. He finally goes into talking about technological innovations that have impacted the culture and society of the world, and how development of this technology should take these changes and impacts into account for responsibility. In particular, the retail and food industry have been prevalent in these developments, like with AmazonGo and also "Flippy" the robot that makes pizza. 
+
+
+
+
+
+
+
+
+
+
+
+
+
